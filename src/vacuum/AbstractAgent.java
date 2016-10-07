@@ -11,9 +11,10 @@ public abstract class AbstractAgent {
 
 	/**
 	 * senses whether the vacuum hit an object or the wall
-	 * returns true if it did, false if not
-	 public abstract void sense_obstacle(boolean isObstacle);
-	 */
+	 * returns true if it did, false if not*/
+	
+	public abstract void sense_obstacle(boolean isObstacle);
+	 
     
 
 }
