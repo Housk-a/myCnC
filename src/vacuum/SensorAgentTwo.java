@@ -10,36 +10,45 @@ public class SensorAgentTwo extends AbstractAgent{
      * Returns the agent's action in response to the dirtiness state of the
      * current square.
      */
-    public Action secondToLastAction = null;
-    public Action lastAction = null;
+    public int x = 6;
+    public Action secondToLastAction;
+    public Action lastAction;
     public static int open = 0;
     public static int noLEFT = 1;
     public static int noRIGHT = 2;
     public static int noUP = 3;
     public static int noDOWN = 4;
-    Random choice = new Random();
-    int randChoice = choice.nextInt(5);
     public  Action react(boolean dirty) {
         if (dirty) {
             return Action.SUCK;
         }
         return chooseRandom();
     }
+    public void sense_obstacle(boolean isObstacle) {
+        if (isObstacle) {
+            isObstacle = true;
+        }
+    }
 
     public Action chooseRandom() {
         Random num = new Random();
         int randInt = num.nextInt(4);
-        int x = 6;
         switch (randInt) {
             case 0:
                 secondToLastAction = lastAction;
                 lastAction = Action.LEFT;
                 return Action.LEFT;
             case 1:
+                secondToLastAction = lastAction;
+                lastAction = Action.UP;
                 return Action.UP;
             case 2:
+                secondToLastAction = lastAction;
+                lastAction = Action.RIGHT;
                 return Action.RIGHT;
             case 3:
+                secondToLastAction = lastAction;
+                lastAction = Action.DOWN;
                 return Action.DOWN;
         }
 
@@ -49,10 +58,16 @@ public class SensorAgentTwo extends AbstractAgent{
 
             switch (randInt) {
                 case 0:
+                    secondToLastAction = lastAction;
+                    lastAction = Action.DOWN;
                     return Action.DOWN;
                 case 1:
+                    secondToLastAction = lastAction;
+                    lastAction = Action.UP;
                     return Action.UP;
                 case 2:
+                    secondToLastAction = lastAction;
+                    lastAction = Action.RIGHT;
                     return Action.RIGHT;
             }
         }
@@ -62,10 +77,16 @@ public class SensorAgentTwo extends AbstractAgent{
 
             switch (randInt) {
                 case 0:
+                    secondToLastAction = lastAction;
+                    lastAction = Action.LEFT;
                     return Action.LEFT;
                 case 1:
+                    secondToLastAction = lastAction;
+                    lastAction = Action.UP;
                     return Action.UP;
                 case 2:
+                    secondToLastAction = lastAction;
+                    lastAction = Action.DOWN;
                     return Action.DOWN;
             }
         }
@@ -75,10 +96,16 @@ public class SensorAgentTwo extends AbstractAgent{
 
             switch (randInt) {
                 case 0:
+                    secondToLastAction = lastAction;
+                    lastAction = Action.LEFT;
                     return Action.LEFT;
                 case 1:
+                    secondToLastAction = lastAction;
+                    lastAction = Action.DOWN;
                     return Action.DOWN;
                 case 2:
+                    secondToLastAction = lastAction;
+                    lastAction = Action.RIGHT;
                     return Action.RIGHT;
             }
         }
@@ -88,13 +115,19 @@ public class SensorAgentTwo extends AbstractAgent{
 
             switch (randInt) {
                 case 0:
+                    secondToLastAction = lastAction;
+                    lastAction = Action.LEFT;
                     return Action.LEFT;
                 case 1:
+                    secondToLastAction = lastAction;
+                    lastAction = Action.UP;
                     return Action.UP;
                 case 2:
+                    secondToLastAction = lastAction;
+                    lastAction = Action.RIGHT;
                     return Action.RIGHT;
             }
         }
-        return Action.LEFT;
+        return Action.SUCK;
     }
 }

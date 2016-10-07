@@ -1,13 +1,13 @@
-package vacuum;
+//package vacuum;
 
-import java.util.Random;
+//import java.util.Random;
 
-/** An agent for the vacuum world. */
+/** An agent for the vacuum world.
 public class ReflexAgent extends AbstractAgent{
 	/**
 	 * Returns the agent's action in response to the dirtiness state of the
 	 * current square.
-	 */
+
     public  Action react(boolean dirty) {
 	if (dirty) {
 	    return Action.SUCK;
@@ -32,3 +32,4 @@ public class ReflexAgent extends AbstractAgent{
 		return Action.LEFT;
 	}
 }
+*/
