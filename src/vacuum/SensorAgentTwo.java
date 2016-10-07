@@ -10,6 +10,8 @@ public class SensorAgentTwo extends AbstractAgent{
      * Returns the agent's action in response to the dirtiness state of the
      * current square.
      */
+    public Action secondToLastAction = null;
+    public Action lastAction = null;
     public static int open = 0;
     public static int noLEFT = 1;
     public static int noRIGHT = 2;
@@ -30,6 +32,8 @@ public class SensorAgentTwo extends AbstractAgent{
         int x = 6;
         switch (randInt) {
             case 0:
+                secondToLastAction = lastAction;
+                lastAction = Action.LEFT;
                 return Action.LEFT;
             case 1:
                 return Action.UP;
